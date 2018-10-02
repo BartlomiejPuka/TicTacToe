@@ -121,8 +121,6 @@ public class TicTacToeFrame extends JFrame implements ActionListener {
         matrix.add(row2);
         matrix.add(row3);
         if (isWon(matrix)) {
-            JOptionPane.showMessageDialog(this, "Player with " + SYMBOL + " won!");
-            reset();
             if(SYMBOL == X_SYMBOL){
                 x_score++;
                 this.label_x.setText("Player \""+ SYMBOL+"\" score is "+String.valueOf(x_score));
@@ -130,6 +128,8 @@ public class TicTacToeFrame extends JFrame implements ActionListener {
                 o_score++;
                 this.label_o.setText("Player \""+ SYMBOL+"\" score is "+String.valueOf(o_score));
             }
+            JOptionPane.showMessageDialog(this, "Player with " + SYMBOL + " won!");
+            reset();
         } else if (isFull(matrix)) {
             JOptionPane.showMessageDialog(this, "Draw");
             reset();
